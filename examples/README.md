@@ -33,7 +33,7 @@ kubectl get svc
 ssh sles@10.17.0.227 -p <NodePort>
 ```
 
-# Installing Kubevirt client (virtctl/kubectl virt)
+# Installing Kubevirt client (virtctl/virt plugin)
 ### Option 1 virtctl 
 ##### SUSE Internal
 ```
