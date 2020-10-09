@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "sles15sp2"
+  labels:
+    app: containerized-data-importer
+  annotations:
+    cdi.kubevirt.io/storage.import.endpoint: "http://ibs-mirror.prv.suse.net/ibs/SUSE/Products/SLE-Product-JeOS/15-SP2/x86_64/SLES15-SP2-JeOS.x86_64-15.2-OpenStack-Cloud-GM.qcow2"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+  storageClassName: hostpath

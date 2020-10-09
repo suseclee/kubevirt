@@ -1,0 +1,47 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  generation: 1
+  labels:
+    kubevirt.io/os: linux
+  name: sles15sp2-vm-base64
+spec:
+  running: true
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        kubevirt.io/domain: sles
+    spec:
+      domain:
+        cpu:
+          cores: 2
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: pvc-sles-image
+          - cdrom:
+              bus: sata
+              readonly: true
+            name: cloudinitdisk
+          interfaces:
+          - name: default
+            masquerade: {}
+            ports:
+              - port: 22
+        machine:
+          type: q35
+        resources:
+          requests:
+            memory: 1024M
+      networks:
+        - name: default
+          pod: {}
+      volumes:
+      - name: pvc-sles-image
+        persistentVolumeClaim:
+          claimName: sles15sp2
+      - name: cloudinitdisk
+        cloudInitNoCloud:
+          userDataBase64: I2Nsb3VkLWNvbmZpZwpwYXNzd29yZDogcGFzc3dvcmQKY2hwYXNzd2Q6IHsgZXhwaXJlOiBGYWxzZSB9CnNzaF9wd2F1dGg6IEZhbHNlCnNzaF9hdXRob3JpemVkX2tleXM6Ci0gc3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFEUHpuM3Jpeit4bnp1dUVFc2M4bzhPR0FacXc2NmIzQTNVNFpuSFU4RHZMcDF5c1FONWZneENsVTRzWW1zejMrMXlhUjVGMThOQjZKV0FBTng1VjVWdEVOUnd1SzJRWnRYWlg2N0p3NU5WbSt1M2ZUT2hQNW0rMldZWStsZk1XODJEb1krT1ExNTY2cnV2RlF5cGgxT3FKZUo3QTQ2V2N0TDNZaW9nalQxNERwWkNJQVlhZ1NRSGpWZm5XWnF0ZGtYbVFhdFpkalo3b3R4N09FUDJsVUsvU0Y5RGwyTFptYTl5dUM3TTFJcHdISFJMSzlwekdCM1UwaTAwdDlkbkE4UGxFMURsaG1zRjdKOU04UENCS2ZXOSswQ3ltZE5KRGFDMWYyZVBIV2x3b0ozcU5MMWVoMEZtZG1paWtJTGtLWTBzWFBSbkQ0YkRWWDBwNG0vYjVaSEggY2hhbmdAbGludXgtaHpkYwo=

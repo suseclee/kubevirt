@@ -1,0 +1,6 @@
+#cloud-config
+password: password
+chpasswd: { expire: False }
+ssh_pwauth: False
+ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPzn3riz+xnzuuEEsc8o8OGAZqw66b3A3U4ZnHU8DvLp1ysQN5fgxClU4sYmsz3+1yaR5F18NB6JWAANx5V5VtENRwuK2QZtXZX67Jw5NVm+u3fTOhP5m+2WYY+lfMW82DoY+OQ1566ruvFQyph1OqJeJ7A46WctL3YiogjT14DpZCIAYagSQHjVfnWZqtdkXmQatZdjZ7otx7OEP2lUK/SF9Dl2LZma9yuC7M1IpwHHRLK9pzGB3U0i00t9dnA8PlE1DlhmsF7J9M8PCBKfW9+0CymdNJDaC1f2ePHWlwoJ3qNL1eh0FmdmiikILkKY0sXPRnD4bDVX0p4m/b5ZHH chang@linux-hzdc
