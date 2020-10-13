@@ -1,3 +1,11 @@
+# Prerequite:
+
+You need to setup StorageClass dependingn on cloud provider.
+In this case I use hostpath for my libvirt platform
+```
+kubectl apply -f storage-setup.yaml
+```
+
 ### In order to upload data to your cluster, the cdi-uploadproxy service must be accessible from outside the cluster.
 ```
 kubectl apply -f cdi-uploadproxy.yaml
