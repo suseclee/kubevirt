@@ -715,13 +715,13 @@ spec:
         - "2"
         env:
         - name: OPERATOR_IMAGE
-          value: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.33.0
+          value: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.34.0
         - name: WATCH_NAMESPACE
           valueFrom:
             fieldRef:
               fieldPath: metadata.annotations['olm.targetNamespaces']
         - name: KUBEVIRT_VERSION
-          value: v0.31.0
+          value: v0.34.0
         - name: VIRT_API_SHASUM
           value: sha256:9c8781bf7c53f2b0466716ce5b0487e68b8440a4b9fc4d070780360a98781a3f
         - name: VIRT_CONTROLLER_SHASUM
@@ -730,7 +730,7 @@ spec:
           value: sha256:d6f7cb2164eda87eaf77d1131d6d6b6421850d620174738df55bfa86aa44bdfe
         - name: VIRT_LAUNCHER_SHASUM
           value: sha256:28fe597a76f59bae36fa20cb1dde158dbb23ca378847eec53a5b28a5d3d5ab45
-        image: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.33.0
+        image: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.34.0
         imagePullPolicy: IfNotPresent
         name: virt-operator
         ports:
