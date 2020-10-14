@@ -1,6 +1,6 @@
 
 # Deploy KubeVirt Operator
-I used SUSE kubevirt mages: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.33.0
+I used SUSE kubevirt mages: registry.suse.de/devel/virt/sle-15-sp2/containers/suse/sles/15.2/virt-operator:0.34.0
 ```
 kubectl apply -f kubevirt-operator.yaml
 ```
