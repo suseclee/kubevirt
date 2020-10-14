@@ -26,3 +26,13 @@ kubectl create -f cdi-cr.yaml
 kubectl get all -n cdi
 ```
 
+# The kubevirt-controller needs to start virtual machines using a special pod security policy. 
+```
+kubectl apply -f grant-kubevirt-privileges.yaml
+```
+
+You need to setup StorageClass dependingn on cloud provider.
+In this case I use hostpath for my libvirt platform
+```
+kubectl apply -f storage-setup.yaml
+```
