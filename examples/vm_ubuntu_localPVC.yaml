@@ -1,0 +1,46 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  generation: 1
+  labels:
+    kubevirt.io/os: linux
+  name: ubuntu
+spec:
+  running: true
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        kubevirt.io/domain: ubuntu
+    spec:
+      domain:
+        cpu:
+          cores: 4
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: ubuntu-image
+          - disk:
+              bus: virtio
+            name: harddrive
+          interfaces:
+          - name: default
+            masquerade: {}
+            ports:
+              - port: 22
+        machine:
+          type: q35
+        resources:
+          requests:
+            memory: 4Gi
+      networks:
+        - name: default
+          pod: {}
+      volumes:
+      - name: ubuntu-image
+        persistentVolumeClaim:
+          claimName: ubuntu
+      - name: harddrive
+        persistentVolumeClaim:
+          claimName: harddisk
