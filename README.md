@@ -8,10 +8,6 @@ kubectl apply -f kubevirt-operator.yaml
 ```
 kubectl -n kubevirt create rolebinding kubvirt-privileged-rolebinding --clusterrole=suse:caasp:psp:privileged --group=system:serviceaccounts:kubevirt
 ```
-### or
-```
-kubectl apply -f grant-kubevirt-privileges.yaml
-```
 ### Create kubevirt cr
 ```
 kubectl create -f kubevirt-cr.yaml
