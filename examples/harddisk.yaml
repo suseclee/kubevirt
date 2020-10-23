@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: harddisk
+  name: win-harddisk
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 14Gi
   storageClassName: hostpath
